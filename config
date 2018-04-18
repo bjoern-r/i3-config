@@ -162,24 +162,27 @@ bar {
 
 for_window [window_role="pop-up"] floating enable
 for_window [instance="guake"] floating enable
-for_window [class="Nautilus"] floating enable
-for_window [class="Nemo"] floating enable
-for_window [class="Eog"] floating enable
+for_window [class="Nemo|Nautilus|Eog"] floating enable
 for_window [class="^keepassxc"] floating enable
-for_window [class="^pavucontrol"] floating enable
+for_window [class="^Gpick|Pavucontrol$"] floating enable
 for_window [class="^vlc"] floating enable
 #for_window [title="Pidgin"] move left; resize shrink right 31px or 31 ppt
 
 focus_follows_mouse no
 
 bindsym $mod+b exec nemo --no-desktop &
-bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/wallpaper/23520575262_34d522db9e_o.png
+#bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/wallpaper/23520575262_34d522db9e_o.png
+bindsym $mod+l exec --no-startup-id /home/bjoern/.config/i3/i3lock.sh
 bindsym $mod+Next workspace next
 bindsym $mod+Prior workspace prev
 ## switch to internal display
 bindsym $mod+p exec --no-startup-id xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
 bindsym XF86MonBrightnessDown exec --no-startup-id /usr/sbin/light -U 10, exec --no-startup-id notify-send -t 10 "Brightness $(light)%"
 bindsym XF86MonBrightnessUp exec --no-startup-id /usr/sbin/light -A 10, exec --no-startup-id notify-send -t 10 "Brightness $(light)%"
+bindsym XF86AudioRaiseVolume exec --no-statup-id pactl set-sink-volume 0 -- +5%
+bindsym XF86AudioLowerVolume exec --no-statup-id pactl set-sink-volume 0 -- -5%
+bindsym XF86AudioMute exec --no-statup-id /usr/bin/pactl set-sink-mute 0 toggle
+#bindsym XF86AudioMicMute exec --no-statup-id 
 
 ## autostart
 exec --no-startup-id dropbox start
