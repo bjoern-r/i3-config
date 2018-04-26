@@ -1,0 +1,145 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.783472700442695,
+    "type": "con",
+    "nodes": [
+        {
+            // tabbed split container with 2 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 433,
+                       "width": 735,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Terminal",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                          "class": "^Gnome\\-terminal$"
+                       // "instance": "^gnome\\-terminal\\-server$",
+                       // "title": "^Terminal$",
+                       // "transient_for": "^$",
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 511,
+                       "width": 956,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Skype",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                          "class": "^Skype$"
+                       // "instance": "^skype$",
+                       // "title": "^Skype$",
+                       // "transient_for": "^$",
+                       // "window_role": "^browser\\-window$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1041,
+               "width": 1916,
+               "x": 2,
+               "y": 37
+            },
+            "name": "flare-o5gc / o5gc-docker-scripts · GitLab - Google Chrome",
+            "percent": 0.5,
+            "swallows": [
+               {
+                  "class": "^Google\\-chrome$"
+               // "instance": "^google\\-chrome$",
+               // "transient_for": "^$",
+               // "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splith split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": 0.216527299557305,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1041,
+               "width": 281,
+               "x": 0,
+               "y": 37
+            },
+            "name": "Buddy List",
+            "percent": 0.145833333333333,
+            "swallows": [
+               {
+                  "class": "^Pidgin$",
+               // "instance": "^Pidgin$",
+               // "title": "^Buddy\\ List$",
+               // "transient_for": "^$",
+                  "window_role": "^buddy_list$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1041,
+               "width": 1631,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Peter Hasse",
+            "percent": 0.854166666666667,
+            "swallows": [
+               {
+                  "class": "^Pidgin$",
+               // "instance": "^Pidgin$",
+               // "transient_for": "^$",
+                  "window_role": "^conversation$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
