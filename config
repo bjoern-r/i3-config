@@ -166,18 +166,25 @@ for_window [class="Nemo|Nautilus|Eog|^Spacefm$|^Arandr$"] floating enable
 for_window [class="^keepassxc"] floating enable
 for_window [class="^Gpick|Pavucontrol$"] floating enable
 for_window [class="^vlc"] floating enable
+for_window [class="^Soffice$" title="^Enter\\ Password$"] floating enable ## somehow does not work, maybe title is changed after creation
 #for_window [title="Pidgin"] move left; resize shrink right 31px or 31 ppt
 
 focus_follows_mouse no
+workspace_auto_back_and_forth yes
 
 bindsym $mod+b exec nemo --no-desktop &
-#bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/wallpaper/23520575262_34d522db9e_o.png
 bindsym $mod+l exec --no-startup-id /home/bjoern/.config/i3/i3lock.sh
+bindsym $mod+Sift+l exec --no-startup-id /home/bjoern/.config/i3/i3lock.sh suspend
 bindsym $mod+Next workspace next
 bindsym $mod+Prior workspace prev
+bindsym $mod+Shift+Next move workspace to output right
+bindsym $mod+Shift+Prior move workspace to output left
+
 ## switch to internal display
 bindsym $mod+p exec --no-startup-id xrandr --output eDP-1 --primary --auto --pos 0x0 --rotate normal --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --off --output DP-2 --off --output DP-2-1 --off --output DP-2-2 --off --output DP-2-3 --off
+## switch to iexternal displays diaysichained on DP2 and disable eDP
 bindsym $mod+Shift+p exec --no-startup-id xrandr --output DP-2-1 --primary --mode 2560x1440 --pos 0x840 --rotate normal --output DP-2-2 --mode 2560x1440 --pos 2560x0 --rotate left --output DP-2-3 --off --output eDP-1 --off --output HDMI-2 --off --output HDMI-1 --off --output DP-2 --off --output DP-1 --off
+
 ## notebook keys
 bindsym XF86MonBrightnessDown exec --no-startup-id /usr/sbin/light -U 10, exec --no-startup-id notify-send -t 10 "Brightness $(light)%"
 bindsym XF86MonBrightnessUp exec --no-startup-id /usr/sbin/light -A 10, exec --no-startup-id notify-send -t 10 "Brightness $(light)%"
@@ -185,6 +192,12 @@ bindsym XF86AudioRaiseVolume exec --no-statup-id pactl set-sink-volume 0 -- +5%
 bindsym XF86AudioLowerVolume exec --no-statup-id pactl set-sink-volume 0 -- -5%
 bindsym XF86AudioMute exec --no-statup-id /usr/bin/pactl set-sink-mute 0 toggle
 #bindsym XF86AudioMicMute exec --no-statup-id 
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
 
 ## autostart
 exec --no-startup-id gnome-settings-daemon
